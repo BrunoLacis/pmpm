@@ -160,6 +160,16 @@ public class TicketView extends Window {
         footer.setWidth("100%");
         footer.setMargin(true);
 
+        final Button cancel = new Button(RESOURCE_BUNDLE.getString("cancel"));
+        cancel.addStyleName("wide");
+        cancel.addStyleName("default");
+        cancel.addClickListener(new ClickListener() {
+            @Override
+            public void buttonClick(ClickEvent event) {
+                close();
+            }
+        });
+
         final Button ok = new Button(RESOURCE_BUNDLE.getString("buy"));
         ok.addStyleName("wide");
         ok.addStyleName("default");
@@ -228,6 +238,7 @@ public class TicketView extends Window {
             }
         });
         type.valueChange(new Field.ValueChangeEvent(type));
+        footer.addComponent(cancel);
         footer.addComponent(ok);
         footer.setComponentAlignment(ok, Alignment.TOP_RIGHT);
         l.addComponent(footer);

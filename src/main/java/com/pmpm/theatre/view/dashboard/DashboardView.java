@@ -90,6 +90,7 @@ public class DashboardView extends VerticalLayout implements View {
             builder.append("\n");
             builder.append("\n");
 
+            System.out.println(String.valueOf(ticket.getShow().getTicketPrice()));
 
             builder.append(String.format(RESOURCE_BUNDLE.getString("dashboard.task.type") + " "));
             builder.append(String.format(RESOURCE_BUNDLE.getString(ticket.getState().name())));
